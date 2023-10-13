@@ -1,6 +1,7 @@
 <template>
     <div class="table">
         <div class="table-list">
+            <h1 v-if="timeslist.length == 0" class="times-list-placeholder">no times here yet!</h1>
             <div v-for="(time, index) in timeslist" :key="index" class="list-row">
                 <span class="span-index">{{timeslist.length - index}}.</span>
                 <span class="span-time"> {{time.td }} </span>
@@ -23,6 +24,13 @@
 </script>
 
 <style scoped>
+.times-list-placeholder{
+    font-size: 1.7rem;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
 
 .times-list p{
     position: absolute;
