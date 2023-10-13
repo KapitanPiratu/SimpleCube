@@ -85,6 +85,7 @@
       stopTimer(){
         this.timeEnd = Date.now();
         this.currentTime = (this.timeEnd - this.timeStart) / 1000;
+        this.$emit('addTime', {td: this.currentTime.toString(), t: this.currentTime}); // time format: {td: "time display", t:"time in miliseconds",st: "status", s:"scramble"}
         this.timerStatus = 'neutral'
       },
       handleStep(type, e){
